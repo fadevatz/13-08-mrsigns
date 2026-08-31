@@ -235,7 +235,13 @@ img {
 
 .logo-img {
   height: 52px;
-  width: auto;
+  width: 52px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 4px;
+  border: 2px solid var(--cmyk-cyan);
+  box-shadow: 0 0 14px var(--cmyk-cyan-glow);
 }
 
 .brand-text {
@@ -770,7 +776,14 @@ img {
 }
 
 .guarantee-logo-center img {
-  height: 60px;
+  height: 64px;
+  width: 64px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 4px;
+  border: 2px solid var(--cmyk-yellow);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
 }
 
 /* ==========================================================================
@@ -1223,7 +1236,14 @@ select.form-control {
 }
 
 .footer-logo {
-  height: 52px;
+  height: 56px;
+  width: 56px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 4px;
+  border: 2px solid var(--cmyk-magenta);
+  box-shadow: 0 0 14px var(--cmyk-magenta-glow);
   margin-bottom: 1rem;
 }
 
