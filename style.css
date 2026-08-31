@@ -1057,12 +1057,12 @@ select.form-control {
   color: #fff;
 }
 
-/* Contact DM Quote Banner (Exact from Image 4) */
+/* Contact DM Quote Banner */
 .dm-quote-banner {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 1.5rem 2.5rem;
+  padding: 1.8rem 2.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1074,11 +1074,11 @@ select.form-control {
 .dm-location {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .dm-location i {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--cmyk-cyan);
 }
 
@@ -1088,54 +1088,14 @@ select.form-control {
   text-transform: uppercase;
   font-weight: 700;
   display: block;
+  letter-spacing: 1px;
 }
 
 .dm-state {
   font-family: var(--font-heading);
   font-size: 1.8rem;
   letter-spacing: 1px;
-  background: var(--gradient-spectrum);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.dm-button {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.8rem 1.8rem;
-  border-radius: var(--radius-pill);
-  background: #000;
-  border: 2px solid transparent;
-  background-image: linear-gradient(#000, #000), var(--gradient-spectrum);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  transition: var(--transition);
-}
-
-.dm-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(230, 0, 126, 0.4);
-}
-
-.dm-button i {
-  font-size: 1.8rem;
-  color: var(--cmyk-yellow);
-}
-
-.dm-btn-sub {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  font-weight: 800;
-  display: block;
-  letter-spacing: 0.5px;
-}
-
-.dm-btn-title {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  letter-spacing: 1px;
-  color: var(--cmyk-yellow);
+  color: #fff;
 }
 
 /* Contact Grid */
