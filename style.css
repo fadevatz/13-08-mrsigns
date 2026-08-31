@@ -1,30 +1,35 @@
 /* ==========================================================================
-   MR SIGNS & DESIGNS LLC — OFFICIAL DESIGN SYSTEM & STYLESHEET
-   Dark Studio Aesthetic & CMYK Spectrum Gradients
+   MR SIGNS & DESIGNS LLC — ALTERNATING DARK & LIGHT SECTIONS STYLESHEET
    ========================================================================== */
 
 :root {
   /* Color Palette */
   --bg-dark: #0a0b0d;
-  --bg-card: #12141a;
-  --bg-card-hover: #191c25;
+  --bg-dark-card: #12141a;
+  --bg-light: #ffffff;
+  --bg-light-alt: #f8fafc;
+  --bg-light-card: #ffffff;
   --bg-nav: rgba(10, 11, 13, 0.95);
   
   /* CMYK & Spectrum Brand Colors */
   --cmyk-cyan: #00AEEF;
   --cmyk-magenta: #E6007E;
-  --cmyk-yellow: #FFF200;
+  --cmyk-yellow: #F59E0B; /* Rich yellow accent */
   
   /* Gradient Spectrum Token */
-  --gradient-spectrum: linear-gradient(90deg, #00AEEF 0%, #E6007E 50%, #FFF200 100%);
+  --gradient-spectrum: linear-gradient(90deg, #00AEEF 0%, #E6007E 50%, #FFB800 100%);
   --cmyk-magenta-glow: rgba(230, 0, 126, 0.35);
   --cmyk-cyan-glow: rgba(0, 174, 239, 0.35);
   
-  /* Neutral Shades */
-  --text-main: #FFFFFF;
-  --text-muted: #A0AEC0;
-  --border-color: rgba(255, 255, 255, 0.12);
-  --border-glow: rgba(0, 174, 239, 0.4);
+  /* Text Tokens */
+  --text-dark-theme: #FFFFFF;
+  --text-dark-muted: #A0AEC0;
+  
+  --text-light-theme: #0f172a;
+  --text-light-muted: #475569;
+  
+  --border-dark: rgba(255, 255, 255, 0.12);
+  --border-light: rgba(15, 23, 42, 0.12);
   
   /* Status & Accents */
   --whatsapp-green: #25D366;
@@ -39,8 +44,8 @@
   --radius-pill: 9999px;
   
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 25px rgba(0, 174, 239, 0.2);
+  --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.4);
+  --shadow-light-card: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 /* Reset & Base */
@@ -58,11 +63,9 @@ html {
 body {
   font-family: var(--font-body);
   background-color: var(--bg-dark);
-  color: var(--text-main);
+  color: var(--text-dark-theme);
   line-height: 1.6;
   overflow-x: hidden;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 30px 30px;
 }
 
 a {
@@ -102,39 +105,6 @@ img {
 
 .cmyk-divider-line.center-line {
   margin: 1rem auto 1.8rem auto;
-}
-
-.section-header {
-  margin-bottom: 3.5rem;
-}
-
-.section-header.center {
-  text-align: center;
-}
-
-.section-subtitle {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--cmyk-cyan);
-  display: inline-block;
-  margin-bottom: 0.4rem;
-}
-
-.section-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  letter-spacing: 1.5px;
-  color: #fff;
-  line-height: 1.05;
-}
-
-.section-desc {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  max-width: 680px;
-  margin: 0 auto;
 }
 
 /* Buttons System */
@@ -177,7 +147,7 @@ img {
 .btn-secondary {
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-dark);
   backdrop-filter: blur(10px);
 }
 
@@ -212,7 +182,7 @@ img {
 /* Announcement Bar */
 .announcement-bar {
   background: #000000;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-dark);
   padding: 0.5rem 0;
   font-size: 0.85rem;
   color: #cbd5e1;
@@ -246,7 +216,7 @@ img {
   z-index: 1000;
   background: var(--bg-nav);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-dark);
   padding: 0.8rem 0;
   transition: var(--transition);
 }
@@ -296,7 +266,7 @@ img {
 .nav-link {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   position: relative;
 }
 
@@ -330,16 +300,18 @@ img {
   cursor: pointer;
 }
 
-/* Hero Section */
+/* ==========================================================================
+   SEÇÃO 1: HERO (FUNDO ESCURO - DARK)
+   ========================================================================== */
 .hero-section {
   position: relative;
   padding: 5rem 0 4rem;
   overflow: hidden;
-  background: radial-gradient(circle at 10% 20%, rgba(0, 174, 239, 0.12) 0%, transparent 45%),
-              radial-gradient(circle at 90% 80%, rgba(230, 0, 126, 0.12) 0%, transparent 45%);
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle at 10% 20%, rgba(0, 174, 239, 0.12) 0%, transparent 45%),
+                    radial-gradient(circle at 90% 80%, rgba(230, 0, 126, 0.12) 0%, transparent 45%);
 }
 
-/* Watermark Brand Text */
 .bg-watermark {
   position: absolute;
   top: -20px;
@@ -396,17 +368,17 @@ img {
   font-size: clamp(3rem, 6vw, 4.8rem);
   line-height: 1.02;
   letter-spacing: 1.5px;
+  color: #fff;
   margin-bottom: 0.8rem;
 }
 
 .hero-description {
   font-size: 1.15rem;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   margin-bottom: 1.8rem;
   max-width: 580px;
 }
 
-/* Price Pills */
 .price-pills-row {
   display: flex;
   gap: 1rem;
@@ -419,8 +391,8 @@ img {
   flex-direction: column;
   padding: 0.8rem 1.4rem;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-  background: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  background: var(--bg-dark-card);
 }
 
 .price-pill.pink {
@@ -436,7 +408,7 @@ img {
 .price-label {
   font-size: 0.8rem;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   font-weight: 700;
 }
 
@@ -460,7 +432,7 @@ img {
   display: flex;
   gap: 1.8rem;
   font-size: 0.88rem;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   flex-wrap: wrap;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -469,7 +441,6 @@ img {
 .hero-trust i.yellow { color: var(--cmyk-yellow); }
 .hero-trust i.cyan { color: var(--cmyk-cyan); }
 
-/* Hero Visual Banner */
 .hero-visual {
   position: relative;
 }
@@ -478,7 +449,7 @@ img {
   position: relative;
   border-radius: var(--radius-lg);
   padding: 8px;
-  background: linear-gradient(135deg, rgba(0, 174, 239, 0.4) 0%, rgba(230, 0, 126, 0.4) 50%, rgba(255, 242, 0, 0.4) 100%);
+  background: linear-gradient(135deg, rgba(0, 174, 239, 0.4) 0%, rgba(230, 0, 126, 0.4) 50%, rgba(255, 184, 0, 0.4) 100%);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
 }
 
@@ -495,12 +466,13 @@ img {
   font-size: 0.85rem;
   font-weight: 700;
   background: rgba(10, 11, 13, 0.92);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-dark);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   gap: 0.5rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  color: #fff;
 }
 
 .badge-top-right {
@@ -517,7 +489,6 @@ img {
   border-color: var(--cmyk-magenta);
 }
 
-/* 4 Brand Value Pillars (Exact from Image 2) */
 .value-pillars-container {
   margin-top: 4rem;
   position: relative;
@@ -525,8 +496,8 @@ img {
 }
 
 .pillars-grid {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
   border-radius: var(--radius-md);
   padding: 1.8rem 2rem;
   display: flex;
@@ -565,7 +536,7 @@ img {
 
 .pillar-text span {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   font-weight: 700;
   letter-spacing: 0.5px;
 }
@@ -573,15 +544,25 @@ img {
 .pillar-divider {
   width: 1px;
   height: 40px;
-  background: var(--border-color);
+  background: var(--border-dark);
 }
 
-/* Services Grid & Circular Icon Rings (Exact from Image 1) */
+/* ==========================================================================
+   SEÇÃO 2: SERVIÇOS (FUNDO CLARO - LIGHT)
+   ========================================================================== */
 .services-section {
   padding: 6rem 0;
-  background: rgba(18, 20, 26, 0.5);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-light);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.services-section .section-title {
+  color: var(--text-light-theme);
+}
+
+.services-section .section-desc {
+  color: var(--text-light-muted);
 }
 
 .services-grid {
@@ -590,21 +571,22 @@ img {
   gap: 2rem;
 }
 
-.service-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+.services-section .service-card {
+  background: var(--bg-light-alt);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   overflow: hidden;
   position: relative;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-light-card);
 }
 
-.service-card:hover {
+.services-section .service-card:hover {
   transform: translateY(-8px);
   border-color: var(--cmyk-cyan);
-  box-shadow: 0 15px 35px rgba(0, 174, 239, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 174, 239, 0.18);
 }
 
 .card-badge.price-tag {
@@ -625,6 +607,7 @@ img {
   height: 220px;
   overflow: hidden;
   position: relative;
+  background: #e2e8f0;
 }
 
 .card-img-holder img {
@@ -645,7 +628,6 @@ img {
   flex-grow: 1;
 }
 
-/* Icon Rings with Cyan, Magenta, Yellow stroke (From Image 1) */
 .card-icon {
   width: 52px;
   height: 52px;
@@ -655,80 +637,82 @@ img {
   justify-content: center;
   font-size: 1.3rem;
   margin-bottom: 1.2rem;
-  background: #0a0b0d;
+  background: #ffffff;
 }
 
 .ring-cyan {
   border: 2px solid var(--cmyk-cyan);
-  color: var(--cmyk-cyan);
-  box-shadow: 0 0 15px var(--cmyk-cyan-glow);
+  color: #0077b6;
+  box-shadow: 0 0 12px var(--cmyk-cyan-glow);
 }
 
 .ring-magenta {
   border: 2px solid var(--cmyk-magenta);
   color: var(--cmyk-magenta);
-  box-shadow: 0 0 15px var(--cmyk-magenta-glow);
+  box-shadow: 0 0 12px var(--cmyk-magenta-glow);
 }
 
 .ring-yellow {
   border: 2px solid var(--cmyk-yellow);
   color: var(--cmyk-yellow);
-  box-shadow: 0 0 15px rgba(255, 242, 0, 0.3);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
 }
 
-.card-body h3 {
+.services-section .card-body h3 {
   font-family: var(--font-heading);
   font-size: 1.6rem;
   letter-spacing: 1px;
-  color: #fff;
+  color: var(--text-light-theme);
   margin-bottom: 0.5rem;
 }
 
-.card-body p {
-  color: var(--text-muted);
+.services-section .card-body p {
+  color: var(--text-light-muted);
   font-size: 0.95rem;
   margin-bottom: 1.2rem;
 }
 
-.card-features {
+.services-section .card-features {
   list-style: none;
   margin-bottom: 1.5rem;
-  font-size: 0.88rem;
-  color: #cbd5e1;
+  font-size: 0.9rem;
+  color: #334155;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  font-weight: 600;
 }
 
-.card-features i {
+.services-section .card-features i {
   color: var(--cmyk-cyan);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   margin-right: 0.4rem;
 }
 
-.card-btn {
+.services-section .card-btn {
   margin-top: auto;
   font-weight: 700;
-  color: var(--cmyk-cyan);
+  color: #0077b6;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.92rem;
 }
 
-.card-btn:hover {
+.services-section .card-btn:hover {
   color: var(--cmyk-magenta);
   gap: 0.8rem;
 }
 
-/* Guarantees Banner Section (From Image 1 Bottom Bar) */
+/* Guarantees Banner Section */
 .guarantees-banner-section {
-  padding: 3rem 0;
+  padding: 3.5rem 0;
+  background: var(--bg-light-alt);
 }
 
 .guarantees-bar-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
   border-radius: var(--radius-lg);
   padding: 1.8rem 3rem;
   display: flex;
@@ -758,7 +742,7 @@ img {
 .star-badge {
   border: 2px solid var(--cmyk-yellow);
   color: var(--cmyk-yellow);
-  box-shadow: 0 0 15px rgba(255, 242, 0, 0.3);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
 }
 
 .check-badge {
@@ -777,7 +761,7 @@ img {
 
 .guarantee-text span {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   font-weight: 600;
 }
 
@@ -789,9 +773,20 @@ img {
   height: 60px;
 }
 
-/* Gallery Section */
+/* ==========================================================================
+   SEÇÃO 3: GALERIA (FUNDO ESCURO - DARK)
+   ========================================================================== */
 .gallery-section {
   padding: 6rem 0;
+  background-color: var(--bg-dark);
+}
+
+.gallery-section .section-title {
+  color: #ffffff;
+}
+
+.gallery-section .section-desc {
+  color: var(--text-dark-muted);
 }
 
 .gallery-tabs {
@@ -803,10 +798,10 @@ img {
 }
 
 .tab-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  padding: 0.6rem 1.4rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-dark);
+  color: var(--text-dark-muted);
+  padding: 0.65rem 1.5rem;
   border-radius: var(--radius-pill);
   font-weight: 600;
   cursor: pointer;
@@ -832,7 +827,8 @@ img {
   overflow: hidden;
   height: 260px;
   cursor: pointer;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-dark);
+  box-shadow: var(--shadow-card);
 }
 
 .gallery-item img {
@@ -889,18 +885,22 @@ img {
   color: #fff;
 }
 
-/* Calculator Section */
+/* ==========================================================================
+   SEÇÃO 4: CALCULADORA / ORÇAMENTO (FUNDO CLARO - LIGHT)
+   ========================================================================== */
 .calculator-section {
-  padding: 5rem 0;
-  background: radial-gradient(circle at 50% 50%, rgba(230, 0, 126, 0.1) 0%, transparent 70%);
+  padding: 6rem 0;
+  background-color: var(--bg-light);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .calc-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(230, 0, 126, 0.3);
+  background: var(--bg-light-card);
+  border: 1px solid rgba(230, 0, 126, 0.25);
   border-radius: var(--radius-lg);
   padding: 3rem;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  box-shadow: var(--shadow-light-card);
 }
 
 .calc-header {
@@ -912,11 +912,11 @@ img {
   font-family: var(--font-heading);
   font-size: 2.5rem;
   letter-spacing: 1px;
-  color: #fff;
+  color: var(--text-light-theme);
 }
 
 .calc-header p {
-  color: var(--text-muted);
+  color: var(--text-light-muted);
   max-width: 620px;
   margin: 0.5rem auto 0;
 }
@@ -924,7 +924,7 @@ img {
 .badge-tag {
   display: inline-block;
   padding: 0.3rem 0.8rem;
-  background: rgba(230, 0, 126, 0.15);
+  background: rgba(230, 0, 126, 0.12);
   color: var(--cmyk-magenta);
   font-size: 0.8rem;
   font-weight: 700;
@@ -953,31 +953,32 @@ img {
 .form-group label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #cbd5e1;
+  color: #334155;
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
 
 .form-group label i {
-  color: var(--cmyk-cyan);
+  color: var(--cmyk-magenta);
 }
 
-.form-control {
-  background: rgba(10, 11, 13, 0.7);
-  border: 1px solid var(--border-color);
+.calculator-section .form-control {
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
   padding: 0.85rem 1rem;
-  color: #fff;
+  color: var(--text-light-theme);
   font-size: 0.95rem;
   font-family: inherit;
   transition: var(--transition);
 }
 
-.form-control:focus {
+.calculator-section .form-control:focus {
   outline: none;
   border-color: var(--cmyk-cyan);
   box-shadow: 0 0 0 3px var(--cmyk-cyan-glow);
+  background: #ffffff;
 }
 
 select.form-control {
@@ -991,7 +992,7 @@ select.form-control {
 .calc-summary {
   margin-top: 1rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1007,20 +1008,21 @@ select.form-control {
 .summary-title {
   font-size: 0.8rem;
   text-transform: uppercase;
-  color: var(--cmyk-cyan);
+  color: var(--cmyk-magenta);
   font-weight: 700;
 }
 
 .summary-text {
   font-size: 1.1rem;
-  color: #fff;
-  font-weight: 600;
+  color: var(--text-light-theme);
+  font-weight: 700;
 }
 
-/* 4 Contact Features (From Image 4) */
+/* Contact Features Bar */
 .contact-features-section {
   padding: 4rem 0 2rem 0;
-  border-top: 1px solid var(--border-color);
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border-dark);
 }
 
 .contact-features-grid {
@@ -1040,8 +1042,8 @@ select.form-control {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  border: 1px solid var(--border-color);
-  background: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  background: var(--bg-dark-card);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1059,8 +1061,8 @@ select.form-control {
 
 /* Contact DM Quote Banner */
 .dm-quote-banner {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
   border-radius: var(--radius-lg);
   padding: 1.8rem 2.8rem;
   display: flex;
@@ -1084,7 +1086,7 @@ select.form-control {
 
 .dm-sub {
   font-size: 0.78rem;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   text-transform: uppercase;
   font-weight: 700;
   display: block;
@@ -1098,7 +1100,14 @@ select.form-control {
   color: #fff;
 }
 
-/* Contact Grid */
+/* ==========================================================================
+   SEÇÃO 5: CONTATO (FUNDO ESCURO - DARK)
+   ========================================================================== */
+.contact-section {
+  padding: 6rem 0;
+  background-color: var(--bg-dark);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1108,11 +1117,12 @@ select.form-control {
 .contact-info-col h2 {
   font-family: var(--font-heading);
   font-size: 2.8rem;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
 .contact-info-col p {
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   margin-bottom: 2rem;
 }
 
@@ -1126,8 +1136,8 @@ select.form-control {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
   padding: 1.2rem 1.5rem;
   border-radius: var(--radius-md);
   transition: var(--transition);
@@ -1153,7 +1163,7 @@ select.form-control {
 
 .card-label {
   font-size: 0.78rem;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   text-transform: uppercase;
 }
 
@@ -1164,14 +1174,15 @@ select.form-control {
 }
 
 .contact-card .arrow {
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
 }
 
 .form-wrapper {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
+  box-shadow: var(--shadow-card);
 }
 
 .form-wrapper h3 {
@@ -1180,10 +1191,27 @@ select.form-control {
   color: #fff;
 }
 
+.contact-section .form-control {
+  background: rgba(10, 11, 13, 0.8);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.contact-section .form-control:focus {
+  outline: none;
+  border-color: var(--cmyk-cyan);
+  box-shadow: 0 0 0 3px var(--cmyk-cyan-glow);
+}
+
 /* Footer */
 .footer {
   background: #050608;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-dark);
   padding-top: 4rem;
 }
 
@@ -1200,7 +1228,7 @@ select.form-control {
 }
 
 .footer-brand p {
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   font-size: 0.92rem;
   max-width: 360px;
 }
@@ -1219,7 +1247,7 @@ select.form-control {
 }
 
 .footer-links a {
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   font-size: 0.9rem;
 }
 
@@ -1251,7 +1279,7 @@ select.form-control {
 }
 
 .phone-display, .insta-display {
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   font-size: 0.88rem;
   margin-top: 0.4rem;
 }
@@ -1261,7 +1289,7 @@ select.form-control {
   padding: 1.5rem 0;
   text-align: center;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
 }
 
 /* Floating WhatsApp Button */
@@ -1417,7 +1445,7 @@ select.form-control {
     flex-direction: column;
     padding: 1.5rem 2rem;
     gap: 1.2rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-dark);
     display: none;
   }
 
