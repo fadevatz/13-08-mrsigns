@@ -1,5 +1,5 @@
 /**
- * MR. SIGNS — MAIN INTERACTIVE SCRIPT
+ * MR SIGNS & DESIGNS LLC — MAIN INTERACTIVE SCRIPT (ENGLISH)
  * Handles WhatsApp Quote Generator, Gallery Filters, Lightbox, and Mobile Menu.
  */
 
@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!summaryPreview) return;
     const prod = productSelect ? productSelect.value : '';
     const qty = quantityInput ? quantityInput.value || '1' : '1';
-    const art = artSelect && artSelect.value.includes('pronta') ? 'Arte pronta' : 'Criar Arte Grátis';
-    const zip = zipInput && zipInput.value ? ` • Entregar em ${zipInput.value}` : ' • Envio EUA';
+    const art = artSelect && artSelect.value.includes('ready') ? 'Logo Ready' : 'Free Design Help';
+    const zip = zipInput && zipInput.value ? ` • Ship to ${zipInput.value}` : ' • USA Shipping';
 
     summaryPreview.textContent = `${qty}x ${prod} • ${art}${zip}`;
   }
@@ -133,19 +133,19 @@ document.addEventListener('DOMContentLoaded', () => {
     quoteForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      const prod = productSelect ? productSelect.value : 'Camisetas';
+      const prod = productSelect ? productSelect.value : 'Custom Uniforms';
       const qty = quantityInput ? quantityInput.value || '15' : '15';
-      const art = artSelect ? artSelect.value : 'Logo pronta';
-      const zip = zipInput && zipInput.value ? zipInput.value : 'Não informado';
-      const obs = obsInput && obsInput.value ? obsInput.value : 'Sem observações adicionais';
+      const art = artSelect ? artSelect.value : 'Logo ready';
+      const zip = zipInput && zipInput.value ? zipInput.value : 'Not specified';
+      const obs = obsInput && obsInput.value ? obsInput.value : 'No additional notes';
 
-      const message = `*SOLICITAÇÃO DE ORÇAMENTO — MR. SIGNS*%0A%0A` +
-        `📦 *Produto:* ${prod}%0A` +
-        `🔢 *Quantidade:* ${qty}%0A` +
-        `🎨 *Situação da Arte:* ${art}%0A` +
-        `📍 *Zip Code / Cidade:* ${zip}%0A` +
-        `📝 *Observações:* ${obs}%0A%0A` +
-        `_Vim pelo site oficial da Mr. Signs!_`;
+      const message = `*CUSTOM QUOTE REQUEST — MR SIGNS & DESIGNS LLC*%0A%0A` +
+        `📦 *Service:* ${prod}%0A` +
+        `🔢 *Quantity:* ${qty}%0A` +
+        `🎨 *Artwork Status:* ${art}%0A` +
+        `📍 *Zip Code / City:* ${zip}%0A` +
+        `📝 *Notes:* ${obs}%0A%0A` +
+        `_Sent via Mr Signs official website!_`;
 
       const whatsappUrl = `https://wa.me/17747722028?text=${message}`;
       window.open(whatsappUrl, '_blank');
@@ -161,10 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const phone = document.getElementById('phone-input')?.value || '';
       const msg = document.getElementById('message-input')?.value || '';
 
-      const formattedMessage = `*NOVA MENSAGEM DO SITE*%0A%0A` +
-        `👤 *Nome:* ${name}%0A` +
-        `📲 *Telefone/WhatsApp:* ${phone}%0A` +
-        `💬 *Mensagem:* ${msg}`;
+      const formattedMessage = `*NEW WEBSITE INQUIRY*%0A%0A` +
+        `👤 *Name / Company:* ${name}%0A` +
+        `📲 *Phone / WhatsApp:* ${phone}%0A` +
+        `💬 *Message:* ${msg}`;
 
       const whatsappUrl = `https://wa.me/17747722028?text=${formattedMessage}`;
       window.open(whatsappUrl, '_blank');
